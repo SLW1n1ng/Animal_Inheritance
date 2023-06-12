@@ -14,11 +14,11 @@ public:
 	~Cat();								//destructor prototype
 	Cat(const Cat& copy);				//copy constructor
 
-	std::string getColor();				//get prototypes for color
+	const std::string getColor() const;				//get prototypes for color
 	int getAge();						//get prototypes for age
 
-	void setColor(std::string color);	//set prototypes for color
-	void setAge(int age);				//set prototypes for age
+	void setColor(const std::string& color);	//set prototypes for color
+	void setAge(const int& age);				//set prototypes for age
 
 	void makeSound() const override;	//Member functions prototypes for makeSound
 	std::string getCatInfo() const;		//Member functions prototypes for getCatInfo

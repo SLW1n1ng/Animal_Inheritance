@@ -6,11 +6,11 @@ Cat::Cat(std::string color, int age) : Animal(), color(color), age(age) { sound 
 Cat::~Cat() { std::cout << "Meeeowr!!..." << std::endl; }							//destructor implementation
 Cat::Cat(const Cat& copy) : Animal(copy.name), color(copy.color), age(copy.age) {}	// copy cat constructor 
 
-std::string Cat::getColor() { return color; }						// get functions for color
+const std::string Cat::getColor() const { return color; }						// get functions for color
 int Cat::getAge() { return age; }									// get functions for  age 
 
-void Cat::setColor(std::string color) { this->color = color; }		// set functions for color
-void Cat::setAge(int age) { if (age < 30 && age > 0) { this->age = age; } else { this->age = 0; } }	// set functions for age
+void Cat::setColor(const std::string& color) { this->color = color; }		// set functions for color
+void Cat::setAge(const int& age) { if (age < 30 && age > 0) { this->age = age; } else { this->age = 0; } }	// set functions for age
 
 void Cat::makeSound() const { std::cout << sound << std::endl; }	// pure virtual function for makeSound
 
