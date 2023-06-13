@@ -2,6 +2,8 @@
 #include "cat.h"
 #include "dog.h"
 #include "fetchTenItems.h"
+#include "petowner.h"
+
 	int main()
 	{
 		Dog dog("Rotweiler", 5);						// Create instance of Dog class
@@ -40,6 +42,19 @@
 
 		std::cout << "Updated dog information: \n" << dog.getDogInfo() << std::endl;//Display updated getDogInfo
 		std::cout << "Updated cat information: \n" << cat.getCatInfo() << std::endl;//Display updated getCatInfo
+
+		PetOwner owner("Fido", "Kitty");				// Create instance of PetOwner class
+
+		std::cout << "Owner's dog name: " << owner.getDog().getName() << std::endl;
+		std::cout << "Owner's cat name: " << owner.getCat().getName() << std::endl << std::endl;
+
+		for (int i = 0; i < 20; i++) {					// Play fetch 20 times
+			owner.playFetchWithDog("ball");	
+			std::cout << std::endl;
+		}
+
+		owner.hearAnimalSound(dog);						// Call the hearAnimalSound function
+		owner.hearAnimalSound(cat);						// Call the hearAnimalSound function
 
 		return 0;
 	}

@@ -6,7 +6,7 @@ Dog::Dog(std::string breed, int age) : Animal(), breed(breed), age(age) {   // o
     sound = "Woof!\n";                                                      // set sound to "Woof!\n"
     fetchCount = 0; 
 }	 
-Dog::~Dog() { std::cout << "Arrrf!!..." << std::endl; }					    // destructor implementation
+Dog::~Dog() {}					                                            // destructor implementation
 Dog::Dog(const Dog& copy) : Animal(copy.name), breed(copy.breed), age(copy.age), fetchCount(0) {}
 
 std::string Dog::getBreed() const { return breed; }                         // get prototypes for breed
@@ -25,7 +25,15 @@ void Dog::fetchItem(const std::string& item) {                              // p
         return; 
     }
     std::cout << "fetchCount = " << fetchCount << "." << name << " fetched the " << item << std::endl;
-
+}
+void Dog::fetchItemExtended(const std::string& item) {
+    fetchCount++;
+    if (fetchCount >= 20) {
+        std::cout << "fetchCount = " << fetchCount << ". " << name << ". The dog is tired." << std::endl;
+        fetchCount = 0;
+        return;
+    }
+    std::cout << "fetchCount = " << fetchCount << ". " << name << " fetched the " << item;
 }
 
 std::string Dog::getDogInfo() const {                                           // getDogInfo implementation

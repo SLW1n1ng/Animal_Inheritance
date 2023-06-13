@@ -24,6 +24,7 @@ public:
 
 	void makeSound() const override;					//Member functions prototypes for makeSound
 	void fetchItem(const std::string& item);			//Member functions prototypes for fetchItem
+	void fetchItemExtended(const std::string& item);
 
 	std::string getDogInfo() const;						//Member functions prototypes for getDogInfo
 
